@@ -8,9 +8,6 @@
 
 import UIKit
 
-// criando o delegate customizado na pagina 'BarraComplementarTeclado', temos que acessá-la pela nossa tela que queremos utilizar o protocolo
-
-    // Creating the custom delegate in 'BarraComplementarTeclado', we have to access it through the view that we want to use the protocol.
 
 class ViewController: UIViewController , UITextFieldDelegate , BarraComplementarTecladoDelegate  {
 
@@ -58,44 +55,24 @@ class ViewController: UIViewController , UITextFieldDelegate , BarraComplementar
         
         self.textFieldExtras.hidden = true
         
-        
-        
-        // instanciando e acessando a CLASSE 'BarraComplementarTeclado':
-        
-            // instantiating and accessing the Class 'BarraComplementarTeclado'
+  
         
         let bar1 = BarraComplementarTeclado()
         let bar2 = BarraComplementarTeclado()
   
-        // indicando qual objeto utilizará os métodos do nosso protocolo delegate 'BarraComplementarTecladoDelegate' (no caso, a propria instancia 'bar1')
-        
-                // indicating which object will use the methods of our protocol 'BarraComplementarTecladoDelegate' (in this case, the instance 'bar1')
-      
         bar1.delegate = self
         bar2.delegate = self
 
-        
-        
-        // atribuindo nossa 'BarraComplementarTecladoDelegate' ao teclado referente a textField (temos que usar 'inputAccessoryView', pois nossa Barra Complementar não deixa de ser um "acessório" extra criado programaticamente para ser utilizado quando o teclado é acionado
-        
-            // assigning 'BarraComplementarTecladoDelegate' to the keyboard in reference to the textField (we have to use '.inputAccessoryView', because our 'Barra Complementar' it is an extra accessory created programmatically)
-        
-        
-        // sendo que temos que atribuir a(s) constante(s) 'barra' que criamos para cada TextField/objeto que queremos que nossa barra Complementar apareça
-        
         self.textFieldBill.inputAccessoryView = bar1
         self.textFieldExtras.inputAccessoryView = bar2
-        
-        // por exemplo, na ultima, atribui 'bar1' apenas para exemplificar que, neste caso, poderiamos ter usado a mesma variavel como 'accessoryView' das outras TexttFields
+       
         
         self.textFieldTaxes.inputAccessoryView = bar1
         
         
         
        self.textFieldPeople.text = "\(Int(self.stepperPeople.value))"
-        
-
-    
+ 
         
       
     }
@@ -156,20 +133,6 @@ class ViewController: UIViewController , UITextFieldDelegate , BarraComplementar
         
     }
     
-//    func textFieldDidBeginEditing(textField: UITextField) {
-//        
-//        if (textField != self.textFieldPessoas) {
-//            
-//            self.scrollView.setContentOffset(CGPoint(x: 0, y: 20), animated: true)
-//            
-//        } else {
-//            
-//            self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-//            
-//        }
-//    }
-
-    //
     
    
     
@@ -330,10 +293,6 @@ class ViewController: UIViewController , UITextFieldDelegate , BarraComplementar
     }
     
     
-    
-    
-    
-
 
 }
 
